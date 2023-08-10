@@ -1,7 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using SuperHeroApi.Data;
-using SuperHeroApi.Interfaces;
-using SuperHeroApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -14,9 +12,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Register custom services for the superheroes
-builder.Services.AddScoped<ISuperheroRepository, SuperheroRepository>();
-builder.Services.AddScoped<ISuperpowerRepository, SuperpowerRepository>();
-builder.Services.AddScoped<IMovieRepository, MovieRepository>();
 builder.Services.AddGraphQLServer().AddQueryType<Query>().AddProjections().AddFiltering().AddSorting();
 
 // Add Application Db Context options
