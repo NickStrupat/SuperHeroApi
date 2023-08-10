@@ -1,4 +1,7 @@
-﻿using SuperHeroApi.Models;
+﻿using System.Linq;
+using HotChocolate;
+using HotChocolate.Data;
+using SuperHeroApi.Models;
 
 namespace SuperHeroApi.Data
 {
